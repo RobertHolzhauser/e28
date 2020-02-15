@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta author="Robert Holzhauser" />
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>e28 Week 2</title>
+</head>
+
+<body>
+    <h1 class="text-center">Word Popper</h1>
+
+    <p class="text-center col-sm-9"> Welcome to the Word Popper, where words pop like popcorn.
+        Load up a batch of words to Pop, by typing each word, then click on "Pop Word".
+        When you have loaded your batch of words, start clicking "Pop Em", and watch the words pop.
+        Once you are ready to pop a new batch click "Stop Popping". Enjoy!!!
+    </p>
+    <label for='name'>What word do you want to pop?</label>
+    <input type='text' name='word' id='inpWord'>
+    <button class="btn btn-sm btn-primary" id="btnAddWord">Pop Word</button>
+    <button class="btn btn-sm btn-success" id="btnRun">Pop Em!</button>
+    <button class="btn btn-sm btn-danger" id="btnStop">Stop Popping</button>
+
+    <div class="container-fluid">
+        <div class="row" id="row1">
+            <div class="col-sm" id="1"></div>
+            <div class="col-sm" id="2"></div>
+            <div class="col-sm" id="3"></div>
+            <div class="col-sm" id="4"></div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col-sm" id="5"></div>
+            <div class="col-sm" id="6"></div>
+            <div class="col-sm" id="7"></div>
+            <div class="col-sm" id="8"></div>
+        </div>
+
+        <div class="row" id="row3">
+            <div class="col-sm" id="9"></div>
+            <div class="col-sm" id="10"></div>
+            <div class="col-sm" id="11"></div>
+            <div class="col-sm" id="12"></div>
+        </div>
+
+        <div class="row" id="row4">
+            <div class="col-sm" id="13"></div>
+            <div class="col-sm" id="14"></div>
+            <div class="col-sm" id="15"></div>
+            <div class="col-sm" id="16"></div>
+        </div>
+
+        <div class="row" id="row5">
+            <div class="col-sm" id="17"></div>
+            <div class="col-sm" id="18"></div>
+            <div class="col-sm" id="19"></div>
+            <div class="col-sm" id="20"></div>
+        </div>
+
+        <div class="row" id="row5">
+            <div class="col-sm" id="21"></div>
+            <div class="col-sm" id="22"></div>
+            <div class="col-sm" id="23"></div>
+            <div class="col-sm" id="24"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="25"></div>
+            <div class="col-sm" id="26"></div>
+            <div class="col-sm" id="27"></div>
+            <div class="col-sm" id="28"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="29"></div>
+            <div class="col-sm" id="30"></div>
+            <div class="col-sm" id="31"></div>
+            <div class="col-sm" id="32"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="33"></div>
+            <div class="col-sm" id="34"></div>
+            <div class="col-sm" id="35"></div>
+            <div class="col-sm" id="36"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="37"></div>
+            <div class="col-sm" id="38"></div>
+            <div class="col-sm" id="39"></div>
+            <div class="col-sm" id="40"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="41"></div>
+            <div class="col-sm" id="42"></div>
+            <div class="col-sm" id="43"></div>
+            <div class="col-sm" id="44"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="45"></div>
+            <div class="col-sm" id="46"></div>
+            <div class="col-sm" id="47"></div>
+            <div class="col-sm" id="48"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="49"></div>
+            <div class="col-sm" id="50"></div>
+            <div class="col-sm" id="51"></div>
+            <div class="col-sm" id="52"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="53"></div>
+            <div class="col-sm" id="54"></div>
+            <div class="col-sm" id="55"></div>
+            <div class="col-sm" id="56"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="57"></div>
+            <div class="col-sm" id="58"></div>
+            <div class="col-sm" id="59"></div>
+            <div class="col-sm" id="60"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="61"></div>
+            <div class="col-sm" id="62"></div>
+            <div class="col-sm" id="63"></div>
+            <div class="col-sm" id="64"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="65"></div>
+            <div class="col-sm" id="66"></div>
+            <div class="col-sm" id="67"></div>
+            <div class="col-sm" id="68"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="69"></div>
+            <div class="col-sm" id="70"></div>
+            <div class="col-sm" id="71"></div>
+            <div class="col-sm" id="72"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="73"></div>
+            <div class="col-sm" id="74"></div>
+            <div class="col-sm" id="75"></div>
+            <div class="col-sm" id="76"></div>
+        </div>
+        <div class="row" id="row5">
+            <div class="col-sm" id="77"></div>
+            <div class="col-sm" id="78"></div>
+            <div class="col-sm" id="79"></div>
+            <div class="col-sm" id="80"></div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
