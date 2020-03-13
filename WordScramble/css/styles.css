@@ -1,0 +1,22 @@
+[v-cloak] {
+    display: none
+}
+
+.mystery {
+    font-size: larger;
+    font-weight: 700;
+}
+
+.miss {
+    background-color: crimson;
+}
+
+.feedback {
+    color: white;
+    font-weight: 900;
+    width: fit-content;
+}
+
+.correct {
+    background-color: green;
+}
