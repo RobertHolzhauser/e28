@@ -1,1 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Word Scramble</title>
 
+  <meta name="author" content="Robert Holzhauser">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script defer src="js/scripts.js"></script>
+</head>
+
+<body>
+<h1>Word Scramble</h1>
+
+<div id='app' v-cloak>
+   <div v-if="playState == 'getReady'">  
+        <label>
+             Enter your player name: <input type='text' id='name' v-model.trim.lazy ='playerName' >  
+            <button @click='startPlay'>Let's Play!</button>
+        </label>  
+    </div>
+    
+    <div v-else>
+        <div id="playArea" >
+            <p>{{ startMessage }}   </p> 
+            
+            <div id="challengeDropDown">
+                How difficult do you want this to be? 
+                <select v-model='challengeLevel'  @click="scrambleThis"> 
+                    <option disabled value="">Choose your challenge ...</option>
+                    <option value='easy'>Easy</option>
+                    <option value='medium'>Medium</option>
+                    <option value='hard'>Hard</option>
+                </select>   
+            </div>  
+            
+            <div id="mainPart" v-if="challengeLevel.length > 0">
+                <div id="mysteryDiv" >
+                    <p>Your mystery word is: <span class="mystery" id="mysteryVal"> {{  scrambledWord  }} </span>  </p> 
+                </div>
+
+                <div id="hint">
+                    <p>Hint: <span id="hintSpan"> {{ hintText }} </span> </p>
+                </div>
+                
+                <div id="myGuess">
+                    <label>
+                        Your guess: <input type='text' id='guess' v-model.trim.lazy ='guess'>
+                    <button @click='checkGuess'>Submit guess</button>
+                    </label>       
+                </div>
+                <br/>
+                
+            </div>
+            <div v-if="guess.length > 0" class="feedback" v-bind:class="[{ correct: !hasError, miss: hasError }]">
+                {{  feedback }} <button  @click='playAgain'>Play Again!</button>
+            </div>
+        </div>
+    </div>   
+</div>  
+
+</body>
+
+</html>
