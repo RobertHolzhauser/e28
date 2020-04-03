@@ -3,8 +3,8 @@
 + Production URL: <http://e28p1.success-tools.club>
 
 ## Outside resources
-[Bootstrap](https://getbootstrap.com/)  I used Bootstrap css, in particular the grid system for layout.
-[VueJS](https://vuejs.org/) I used the Vue.js guide, api, and other documentation on the Vue site.
++ [Bootstrap](https://getbootstrap.com/)  I used Bootstrap css, in particular the grid system for layout.
++ [VueJS](https://vuejs.org/) I used the Vue.js guide, api, and other documentation on the Vue site.
 
 
 ## Notes for instructor
