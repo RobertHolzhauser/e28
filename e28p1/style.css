@@ -1,0 +1,44 @@
+body {
+
+    background-color: green;
+}
+
+h1 {
+    color: gold;
+    font-weight: 900;
+}
+
+#winnerRow {
+    font-size: 14;
+    font-weight: 600;
+    border-color: gold, 10 px;
+
+}
+
+#playerScore,
+#houseScore,
+#winnerRow,
+#p1,
+#d1,
+#historyLabel,
+h5,
+h6,
+label {
+    color: whitesmoke;
+}
+
+#p1,
+#d1 {
+    display: inline-block;
+}
+
+input {
+    margin-top: 3px;
+    max-width: 150px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

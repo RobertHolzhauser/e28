@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta author="Robert Holzhauser" />
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>e28 Project 1</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <div class="container-fluid">
+            <div class="row" id="topRow">
+                <div class="col-sm-4" id="playerScore" v-show="playState == 'Playing'">
+                    {{ playerName }} score: {{ playerTotal  }}
+                </div>
+                <div class="col-sm">
+                    <h1 class="text-center" class="display-1">Twenty One</h1>
+                </div>
+                <div class="col-sm-4" id="houseScore" v-show="playState == 'Playing'">
+                    House Score: {{ houseTotal }}
+                </div>
+            </div>
+            <br>
+            <div row v-if="playState == 'getReady'">
+                <label>
+                    Enter your name: <input type='text' id='myName' v-model.trim.lazy='playerName'>
+                    <button @click='play'>&nbsp;Play</button>
+                </label>
+            </div>
+            <div else>
+
+                <div class="row" id='winnerRow' v-show="playState == 'Playing'">
+                    <div class="col-sm-4"></div>
+                    <h4>Winner: {{ announceWinner }} </h4>
+                </div>
+                <br />
+                <div class="row" id="houseRow" v-show="playState == 'Playing'">
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-2">
+                        <div id="p1" v-for='roll in playerScoresCurr'>{{ roll }} &nbsp;
+                        </div>
+                        <h6> {{ playerName }} Total: {{ getPlayerTotal }}</h6>
+
+                    </div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                        <div id="d1" v-for='roll in houseScoresCurr'>{{ roll }} &nbsp;
+                        </div>
+                        <h6>House Total: {{ getHouseTotal }} </h6>
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row" v-show="playState == 'Playing'">
+                    <div class="col-sm-4"></div>
+                    <button @click='playAgain'>Play Again!</button>
+                </div>
+                <br />
+
+                <div v-show="playState == 'Playing'">
+                    <h5>Game History</h5>
+                </div>
+                <br />
+                <div class="row" id="historyLabel" v-show="playState == 'Playing'">
+
+                    <ul>
+                        <li v-for='(game, index) in games'>
+                            Round: {{ index }} &nbsp; {{ playerName }} Total: {{ game.playerTotal }} &nbsp;
+                            House Total: {{ game.houseTotal }} &nbsp;&nbsp; Winner: {{ game.winner }}
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+</body>
+
+</html>
