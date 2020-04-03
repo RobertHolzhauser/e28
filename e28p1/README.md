@@ -5,6 +5,7 @@
 ## Outside resources
 + [Bootstrap](https://getbootstrap.com/)  I used Bootstrap css, in particular the grid system for layout.
 + [VueJS](https://vuejs.org/) I used the Vue.js guide, api, and other documentation on the Vue site.
++ [MSDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  Also, the MSDN Javascript site.
 
 
 ## Notes for instructor
