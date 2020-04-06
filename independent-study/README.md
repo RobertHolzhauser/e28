@@ -1,22 +1,25 @@
-Integrating Vue.js with ASP.NET Core
+# Integrating Vue.js with ASP.NET Core
 
-https://app.pluralsight.com/library/courses/that-conference-2019-session-64 
+[https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ](https://app.pluralsight.com/library/courses/that-conference-2019-session-64 )
 
-https://vuex.vuejs.org
+[https://vuex.vuejs.org](https://vuex.vuejs.org)
 
-vue-moment  https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com
-https://made
+vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
+[https://made
 withvuejs.com/vue-moment
-https://momentjs.com/
+https://momentjs.com/](https://made
+withvuejs.com/vue-moment
+https://momentjs.com/)
+
 vue-axios --- AJAX   if you want to avoid jquery
 
-VueX  for state management for medium to large SPA apps.    https://vuex.vuejs.org/
+VueX  for state management for medium to large SPA apps.    [https://vuex.vuejs.org/](https://vuex.vuejs.org/)
 for smaller apps, the store pattern will probably suffice.
 
-https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch  ---store pattern.
+[https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch](https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch)   ---store pattern.
 
 Vue applications is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you can share it by identity:
-
+```
 var sourceOfTruth = {}
 
 var vmA = new Vue({
@@ -26,6 +29,7 @@ var vmA = new Vue({
 var vmB = new Vue({
   data: sourceOfTruth
 })
+```
 
 Now whenever sourceOfTruth is mutated, both vmA and vmB will update their views automatically. Subcomponents within each of these instances would also have access via this.$root.$data. We have a single source of truth now, but debugging would be a nightmare. 
 Any piece of data could be changed by any part of our app at any time, without leaving a trace.
