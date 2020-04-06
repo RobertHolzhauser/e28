@@ -117,6 +117,33 @@ This makes wildcard routers so that MVC will not route more specifically than th
 [Route("api/posts/{postID}/post")]
 public class CommentsController : ControllerBase  
 ```
+[https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1)  ### Create web APIs with ASP.NET Core
+
+According to the Microsoft documentation this will bring with the following behaviors: 
+
++ Attribute routing requirement
++ Automatic HTTP 400 responses
++ Binding source parameter inference
++ Multipart/form-data request inference
++ Problem details for error status codes
+
+If we want to use several Api Controller classes we can create a base API controller class and have all of our API controllers inherit from it.  
+
+```
+[ApiController]
+public class APIControllerBase : ControllerBase
+{
+}
+
+```
+
+And our API Controllers can inherit from it like this:
+
+```
+[Route("[media]")]
+public class MediaController : APIControllerBase
+```
+
 
 
 ```
