@@ -113,6 +113,11 @@ This makes wildcard routers so that MVC will not route more specifically than th
  Need an API Controller that will accept JSON.
 ```
 [ApiController]
+[ApiConventionType(typeof(DefaultApiConventions))]
+[Route("api/posts/{postID}/post")]
+public class CommentsController : ControllerBase  
+```
+
 
 ```
 
