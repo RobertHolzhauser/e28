@@ -5,6 +5,7 @@
 [https://vuex.vuejs.org](https://vuex.vuejs.org)
 
 vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
+
 [https://made
 withvuejs.com/vue-moment
 https://momentjs.com/](https://made
@@ -35,7 +36,7 @@ Now whenever sourceOfTruth is mutated, both vmA and vmB will update their views 
 Any piece of data could be changed by any part of our app at any time, without leaving a trace.
 
 To help solve this problem, we can adopt a store pattern:
-
+```
 var store = {
   debug: true,
   state: {
@@ -51,17 +52,18 @@ var store = {
   }
 }
 
-
+```
 
 Vue CLI - command line interface quickly scaffold a new project through the terminal
 to get Vue CLI :
-
+```
 with NPM
 npm install -g @vue/cli
 
 or for yarn:
 
 yarn global add @vue/cli
+```
 
 then vue ui ... this starts the vue CLI GUI
 
@@ -109,8 +111,10 @@ This makes wildcard routers so that MVC will not route more specifically than th
 , then we can use vue routing for more specific interal links, without page refreshes.
 
  Need an API Controller that will accept JSON.
-
+```
 [ApiController]
+
+```
 
 
 Model Class 
