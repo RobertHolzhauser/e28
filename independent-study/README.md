@@ -91,9 +91,9 @@ specify base MVC route for SPA page in
 Thus it is probably best to just use the longer v-on:click in Razor views.  
 to avoid confusion.
 
-can use https://bootstrap-vue.js.org/docs to avoid having a j-Query dependency
+We can use https://bootstrap-vue.js.org/docs to avoid having a j-Query dependency for Bootstrap.  
 
-Options for integrating Vue.js with net core:
+Per Options for integrating Vue.js with net core 
 
 1) Add Vue to specific pages / views of an existing app.
 
