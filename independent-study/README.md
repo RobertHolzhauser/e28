@@ -1,15 +1,13 @@
 # Integrating Vue.js with ASP.NET Core
-In Matt Millican's Pluralsight course, he covers t possibilities for integrating Vue.js with an ASP.NET Core project.
-First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  This can be a good way to get started incorporating Vue.js into ASP.Net Core projects because it can specific pages, or even sections of a page.  The second option is to use Vue.js in some of the views or partial views of the project, but still using the MVC and Razor framework provided natively in ASP.NET Core.   
 
-2) ASP.NET CORE App + Vue.js SPA
-	--->  net core MVC  or Razor app
-	-->  Vue.js in certain Views or Partial Views
+In Matt Millican's Pluralsight course, he covers two basic possibiliies for integrating Vue.js with an ASP.NET Core project.
+First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  In this way we can incorporating Vue.js into ASP.Net Core projects and it can work along side or even integrated into Razor and MVC views.  (Millican, 2019).
 
-3) Make Vue.js Front End as a seperate project that calls .net core Web Api.
-	These would be in the same solution, but seperate projects.
+The second method utilizes Vue.js as the complete front-end presentation layer housed in it's own project that calls a second project,  which is an API, generally we would have the Visual Studio solution also contain the ASP.NET Core Web Api. (Millican, 2019) However, since the method of communication between the Vue front-end and the ASP.NET Core Api, is Rest, the business logic and backend could exist in any number of backends, including PHP, Java, Python, and Ruby on Rails.
 
-[https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ](https://app.pluralsight.com/library/courses/that-conference-2019-session-64 )
+### References
+(Millican, M., 2019, THAT Conference '19: Vue and ASP.Net Core: Better Together,
+[https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ](https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ))
 
 [https://vuex.vuejs.org](https://vuex.vuejs.org)
 
