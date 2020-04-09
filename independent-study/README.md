@@ -6,11 +6,7 @@
 
 vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
 
-[https://made
-withvuejs.com/vue-moment
-https://momentjs.com/](https://made
-withvuejs.com/vue-moment
-https://momentjs.com/)
+[https://madewithvuejs.com/vue-moment](https://madewithvuejs.com/vue-moment)
 
 vue-axios --- AJAX   if you want to avoid jquery
 
