@@ -5,22 +5,6 @@ First, we can add Vue to specific pages or views of an existing ASP .NET Core ap
 
 The second method utilizes Vue.js as the complete front-end presentation layer housed in it's own project that calls a second project,  which is an API, generally we would have the Visual Studio solution also contain the ASP.NET Core Web Api. (Millican, 2019) However, since the method of communication between the Vue front-end and the ASP.NET Core Api, is Rest, the business logic and backend could exist in any number of backends, including PHP, Java, Python, and Ruby on Rails.
 
-### References
-(Millican, M., 2019, THAT Conference '19: Vue and ASP.Net Core: Better Together,
-[https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ](https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ))
-
-[https://vuex.vuejs.org](https://vuex.vuejs.org)
-
-vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
-
-[https://madewithvuejs.com/vue-moment](https://madewithvuejs.com/vue-moment)
-
-vue-axios --- AJAX   if you want to avoid jquery
-
-VueX  for state management for medium to large SPA apps.    [https://vuex.vuejs.org/](https://vuex.vuejs.org/)
-for smaller apps, the store pattern will probably suffice.
-
-[https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch](https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch)   ---store pattern.
 
 Vue applications is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you can share it by identity:
 ```
@@ -113,7 +97,9 @@ This makes wildcard routers so that MVC will not route more specifically than th
 [Route("api/posts/{postID}/post")]
 public class CommentsController : ControllerBase  
 ```
-[https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1)  ### Create web APIs with ASP.NET Core
+
+
+### Create web APIs with ASP.NET Core
 
 According to the Microsoft documentation this will bring with the following behaviors: 
 
@@ -150,3 +136,21 @@ Model Class
 
 
 
+### References
+(Millican, M., 2019, THAT Conference '19: Vue and ASP.Net Core: Better Together,
+[https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ](https://app.pluralsight.com/library/courses/that-conference-2019-session-64 ))
+
+[https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1)  
+
+[https://vuex.vuejs.org](https://vuex.vuejs.org)
+
+vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
+
+[https://madewithvuejs.com/vue-moment](https://madewithvuejs.com/vue-moment)
+
+vue-axios --- AJAX   if you want to avoid jquery
+
+VueX  for state management for medium to large SPA apps.    [https://vuex.vuejs.org/](https://vuex.vuejs.org/)
+for smaller apps, the store pattern will probably suffice.
+
+[https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch](https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch)   ---store pattern.
