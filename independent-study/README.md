@@ -1,12 +1,12 @@
 # Integrating Vue.js with ASP.NET Core
 
 In Matt Millican's Pluralsight course, he covers two basic possibilities for integrating Vue.js with an ASP.NET Core project.
-First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  In this way we can incorporating Vue.js into ASP.Net Core projects and it can work along side or even integrated into Razor and MVC views.  (Millican, 2019).
+First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  In this way we can incorporate Vue.js into ASP.Net Core projects and it can work along side or even be integrated into Razor and MVC views.  (Millican, 2019).
 
-The second method utilizes Vue.js as the complete front-end presentation layer housed in it's own project that calls a second project,  which is an API, generally we would have the Visual Studio solution also contain the ASP.NET Core Web Api. (Millican, 2019) However, since the method of communication between the Vue front-end and the ASP.NET Core Api, is Rest, the business logic and backend could exist in any number of backends, including PHP, Java, Python, and Ruby on Rails.
-
+The second method utilizes Vue.js as the complete front-end presentation layer housed in it's own project that calls a second project,  which is an API, generally we would have the Visual Studio solution also contain the ASP.NET Core Web Api. (Millican, 2019) However, since the method of communication between the Vue front-end and the ASP.NET Core Api, is Rest, the business logic and backend could exist in any number of backends that can run a Rest API, including PHP, Java, Python, and Ruby on Rails.
 
 Vue applications is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple instances, you can share it by identity:
+
 ```
 var sourceOfTruth = {}
 
