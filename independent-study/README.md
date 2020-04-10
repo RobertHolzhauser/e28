@@ -11,7 +11,9 @@ In this paper I will focus on the second option of having a Vue front-end intera
 
 The advantages of this two seperate applications approach are that you get seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the .NetCore API.  You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
 
-When using Vue as the front end, that implies that all routing will happen inside of Vue, rather than MVC.   
+When using Vue as the front end, that implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)
+
+Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)
 
 Internal to the Vue application is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple Vue instances, you can share it by identity:  
 VueX  for state management for medium to large SPA apps.  for smaller apps, the store pattern will probably suffice.
@@ -145,12 +147,11 @@ Millican, M., 2019, THAT Conference '19: Vue and ASP.Net Core: Better Together,
 
  Vuejs.org, 2020, VueX Documentation, [https://vuex.vuejs.org](https://vuex.vuejs.org)
 
- 
 vue-moment  [https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com](https://github.com/brockpetrie/vue-moment?ref=madewithvuejs.com)
 
 [https://madewithvuejs.com/vue-moment](https://madewithvuejs.com/vue-moment)
 
-vue-axios --- AJAX   if you want to avoid jquery
+Vuejs.org, 2018, Using Axios to Consume APIs, [https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
 
 [https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch](https://vuejs.org/v2/guide/state-management.html#Simple-State-Management-from-Scratch)   ---store pattern.
 
