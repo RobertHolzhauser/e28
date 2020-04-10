@@ -13,7 +13,23 @@ The advantages of this two seperate applications approach are that you get seper
 
 When using Vue as the front end, that implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)
 
-Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)
+Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)  First, of course, we'll need to install Axios with something like NPM, Yarn, or reference the CDN.  Next, we'll want to create a LoadData method that might look something like the following example adapted from the VueJS Cookbook.
+
+```
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      apiData: null
+    }
+  },
+  methods () {
+    axios
+      .get('https://example.com/api.json')
+      .then(response => (this.apiData = response))
+  }
+})
+```
 
 Internal to the Vue application is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple Vue instances, you can share it by identity:  
 VueX  for state management for medium to large SPA apps.  for smaller apps, the store pattern will probably suffice.
@@ -137,7 +153,7 @@ And our API Controllers can inherit from it like this:
 public class MediaController : APIControllerBase
 ```
  
-
+So, in conclusion, overall this is a very simple pattern.  To use it we create a Vue project with the Vue CLI, and an API project.  There are two categories of routing to manage.  One is the routes to the API, which are set up inside in ASP.Net Core the other is the routes that are used inside the SPA front-end which are handled by the Vue engine.  We can do our communication back and forth between the front-end and back-end with Axios.  The other concern that I haven't addressed is authentication, but that is out of scope for this paper. 
 
 ### References
 Microsoft, 2019, Asp.Net Core Documentation, [https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.1) 
