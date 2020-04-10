@@ -9,6 +9,10 @@ For the first method Vue integrates very easily with Html and Razor syntax, in t
 
 In this paper I will focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.
 
+The advantages of this two seperate applications approach are that you get seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the .NetCore API.  You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.
+
+When using Vue as the front end, that implies that all routing will happen inside of Vue, rather than MVC.   
+
 Vue application is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple Vue instances, you can share it by identity:  
 VueX  for state management for medium to large SPA apps.  for smaller apps, the store pattern will probably suffice.
 
