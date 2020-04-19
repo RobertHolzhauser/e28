@@ -6,3 +6,5 @@ Image of Steam Engine used for logo is from the Library of Congress Digital Coll
 Import BootStrap CSS Only [https://www.npmjs.com/package/bootstrap-css-only](https://www.npmjs.com/package/bootstrap-css-only)
 
 Include Bootstrap [https://travishorn.com/adding-bootstrap-to-a-vue-cli-project-98c2a30e0ed0](https://travishorn.com/adding-bootstrap-to-a-vue-cli-project-98c2a30e0ed0)
+
+Favicon Generator [https://favicon.io/favicon-generator/](https://favicon.io/favicon-generator/)
