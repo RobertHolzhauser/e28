@@ -14,8 +14,13 @@ For the first method of applying Vue.js with a front end built with Razor or MVC
 
 One thing to keep in mind with this approach is the @ symbol is a key word for Razor, so it using the @ shortcut syntax in a Razor view it would need to be escaped.  Thus, it's probably best to just use the longer v-on:click type syntax in Razor views to avoid confusion.
 
+### MVC SPA Routing 
+If we build a subsection of our front end as a single page application with Vue.js we wil need to avoid routing conflicts between MVC and Vue.  MVC will try to apply it's own routing.  There are a number of routing mechanisms in ASP.NET Core.  Essentially we want to override them.  The default routing mechanism in ASP.NET Core uses the name of the controller followed by the name of the method in the controller, both as part of the route.  We want to have the controller related to the Vue SPA section of our front end hand over routing to Vue. The way to do this is in the MVC Controller that you want to have Vue be the front end for .. use HttpGet Attribute with (@path).  This allows "wildcard" routes, which effectively makes it so that MVC will not route more specifically than the controller level, then we will be able to use Vue routing for more specific interal links, without page refreshes. 
+
 ### Vue.js Front End with an ASP.Net Core Api Backend
-In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.
+In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.  
+
+I'll cover some of the key aspects for both front and back ends, but I will stop short of presenting a full example project.
 
 ### Advantages
 The advantages of this technique of having two different applications approach are that you get a seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the ASP.Net Core API.   You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
@@ -114,31 +119,8 @@ vue create my-project
 ```
 This will build out the basic structure for us, and save a lot of time.
 
-
-
-
-
-
-We can use https://bootstrap-vue.js.org/docs to avoid having a j-Query dependency for Bootstrap.  
-
-Per Options for integrating Vue.js with net core 
-
-
-
-
-in MVC Controller that you want to have Vue be front end for .. use HttpGet Attribute with (@path) 
-
-This makes wildcard routers so that MVC will not route more specifically than the controller level
-, then we can use vue routing for more specific interal links, without page refreshes.
-
- Need an API Controller that will accept JSON.
-```
-[ApiController]
-[ApiConventionType(typeof(DefaultApiConventions))]
-[Route("api/posts/{postID}/post")]
-public class CommentsController : ControllerBase  
-```
-
+### Bootstrap Vue
+We can use https://bootstrap-vue.js.org/docs to avoid having the j-Query dependency for Bootstrap, and still get the robust css library. 
 
 ### Create web APIs with ASP.NET Core
 
@@ -150,7 +132,7 @@ According to the Microsoft documentation this will bring with the following beha
 + Multipart/form-data request inference
 + Problem details for error status codes
 
-If we want to use several Api Controller classes we can create a base API controller class and have all of our API controllers inherit from it.  
+If we want to use several Api Controller classes we can create a base API controller class and have all of our API controllers inherit from it.   
 
 ```
 [ApiController]
@@ -160,14 +142,26 @@ public class APIControllerBase : ControllerBase
 
 ```
 
-And our API Controllers can inherit from it like this:
+And, then our API Controllers can inherit from it like this:
 
 ```
 [Route("[media]")]
 public class MediaController : APIControllerBase
 ```
- 
-So, in conclusion, overall this is a very simple pattern.  To use it we create a Vue project with the Vue CLI, and an API project.  There are two categories of routing to manage.  One is the routes to the API, which are set up inside in ASP.Net Core the other is the routes that are used inside the SPA front-end which are handled by the Vue engine.  We can do our communication back and forth between the front-end and back-end with Axios.  The other concern that I haven't addressed is authentication, but that is out of scope for this paper. 
+### Ensure Controller will accept JSON
+
+We also need to ensure that an API Controller that will accept JSON.
+```
+[ApiController]
+[ApiConventionType(typeof(DefaultApiConventions))]
+[Route("api/posts/{postID}/post")]
+public class CommentsController : ControllerBase  
+```
+
+For the purpose of setting up communication between our Vue.js front end, and our ASP.NET Core back we only need to look as far as the controllers.  These are what our AJAX components will interact with.  Of course we would need to build out the rest of our C# application with data models, data base connectivity, and so forth.  All of that is out of scope for this paper.  
+
+### Conclusion
+So, in conclusion, overall this is a very simple pattern.  To use it we create in the same solution a Vue project with the Vue CLI, and an API project.  There are two categories of routing to manage.  One is the routes to the API, which are set up inside in ASP.Net Core the other is the routes that are used inside the SPA front-end which are handled by the Vue engine.  We can do our communication back and forth between the front-end and back-end with Axios.  The other concern that I haven't addressed is authentication, but that is out of scope for this paper. 
 
 ### References
 Mathias, JQuery File Size, [https://mathiasbynens.be/demo/jquery-size](https://mathiasbynens.be/demo/jquery-size)
