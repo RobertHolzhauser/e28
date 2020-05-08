@@ -18,18 +18,15 @@ One thing to keep in mind with this approach is the @ symbol is a key word for R
 If we build a subsection of our front end as a single page application with Vue.js we will need to avoid routing conflicts between MVC and Vue.  MVC will try to apply it's own routing.  There are a number of routing mechanisms in ASP.NET Core.  Essentially we want to override them.  The default routing mechanism in ASP.NET Core uses the name of the controller followed by the name of the method in the controller, both as part of the route.  We want to have the controller related to the Vue SPA section of our front end hand over routing to Vue. The way to do this is in the MVC Controller for which you want to have Vue be the front end of use the HttpGet Attribute with (@path).  This allows "wildcard" routes, which effectively makes it so that MVC will not route more specifically than the controller level, then we will be able to use Vue routing for more specific interal links, without page refreshes. 
 
 ### Vue.js Front End with an ASP.Net Core Api Backend
-In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.  
-
-I'll cover some of the key aspects for both front and back ends, but I will stop short of presenting a full example project.
+In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.  I'll cover some of the key aspects for both front and back ends, but I will stop short of presenting a full example project.
 
 ### Advantages
-The advantages of this technique of having two different applications approach are that you get a seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the ASP.Net Core API.   You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
+The advantages of having two different applications approach are that you get a seperation of concerns, thus you can have two seperate teams working on the same project, one focused on the front end Vue application, and one focused on the ASP.Net Core API.   You also get the advantage of separate deployments since both the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
 
 ### Routing
-When using Vue as the front end, this also implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)  Probably the best way to do routing in a Vue app is Vue Router.  This is probably the easiest way to set up routing in the Vue SPA 
-so as to avoid page refreshes.
+When using Vue as the front end, this also implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)  Probably the best way to do routing in a Vue app is to use the Vue Router library so as to avoid page refreshes.
 
-First, we need to add Vue Router to our project.
+To do this we first need to add Vue Router to our project.
 
 ```
 npm install vue-router
