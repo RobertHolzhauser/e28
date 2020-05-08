@@ -36,7 +36,7 @@ Or, auto-magically like so, assuming we have included Vue first, this will cause
 ```
 <script src="/path/to/vue-router.js"></script>
 ```
-What's especially neat about this is that since the <router-link> tag renders on the dom as <a > tag, but Vue dynamically intercepts the link and handles the routing internally to avoid the full page refresh that would happen with standard a tag.  The general rule of thumb is to use the router-link tag for internal links, and as normal use <a> tags for external links.
+What's especially neat about this is that since the <router-link> tag renders on the DOM as an <a> tag, but Vue dynamically intercepts the link and handles the routing internally to avoid the full page refresh that would happen with standard a tag.  The general rule of thumb is to use the router-link tag for internal links, and as normal use <a> tags for external links.
 
 ### AJAX via Axios
 Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)  First, of course, we'll need to install Axios with something like NPM, Yarn, or reference the CDN.  Next, we'll want to create a LoadData method that might look something like the following example adapted from the VueJS Cookbook.
