@@ -2,7 +2,7 @@
 ## By Robert Holzhauser 
 
 ### Introduction
-For my job I work mostly with ASP.Net Core.  Therefore, I'm very curious how I can take what I'm learning about Vue.js in this course, and apply it in my daily work.
+For my job I work mostly with ASP.Net Core.  Therefore, I'm very curious how I can take what I'm learning about Vue.js in this course and apply it in my daily work.
 
 ### Main Options
 In Matt Millican's Pluralsight course on this topic, he covers two basic possibilities for integrating Vue.js with an ASP.NET Core project.  First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  In this way we can incorporate Vue.js into ASP.Net Core projects and it can work along side or even be integrated into Razor and MVC views.  (Millican, 2019).
