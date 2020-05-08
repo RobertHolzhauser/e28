@@ -12,6 +12,8 @@ The second method utilizes Vue.js as the complete front-end presentation layer h
 ### Integrating Vue with a Razor or MVC Front End
 For the first method of applying Vue.js with a front end built with Razor or MVC, Vue integrates very easily with the Html and Razor syntax, in the Html tags as normal.  We can apply Vue to a specific elements where we want to bring the Vue functionality to bear.  This could be as granular as a single element, or as broad stroke as a subsection built as a Single Page Application (SPA) for something such as an admin page, blog or shopping cart.  We might want to use the mustache syntax to get data binding, or perhaps it would be handing to be able to include and exclude things from the DOM with Vue's v-if syntax.  A compelling reasons we might want to do this, is the Vue.js library weighs in at 33 kb (Wikipedia, 2020) , while JQuery, minified, would cost us two and a half times that at 84 kb. (Mathias).  Of course, the other reason to opt to include Vue as part of the front end of a ASP.NET Core app is the simplicity that Vue.js allows us to have, for otherwise fairly complex code.
 
+One thing to keep in mind with this approach is the @ symbol is a key word for Razor, so it using the @ shortcut syntax in a Razor view it would need to be escaped.  Thus, it's probably best to just use the longer v-on:click type syntax in Razor views to avoid confusion.
+
 ### Vue.js Front End with an ASP.Net Core Api Backend
 In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.
 
@@ -110,29 +112,18 @@ To get Vue CLI:
 ```
 with NPM
 npm install -g @vue/cli
-
-or for yarn:
-
-yarn global add @vue/cli
 ```
 
-then vue ui ... this starts the vue CLI GUI
-
-to start a new project -- go to project manager (default 1st time) if you have an existing project it will take you the dashboard 
-of the most recent opened project
-
-Create .... choose path .....click create new project here 
-give project a name
+Then, from the path where we want to house our project:
+```
+vue create my-project
+```
+This will build out the basic structure for us, and save a lot of time.
 
 
 
 
-specify base MVC route for SPA page in 
 
-
-@ shortcut in a Razor view needs to be escaped since @ is a key symbol for razor. 
-Thus it is probably best to just use the longer v-on:click in Razor views.  
-to avoid confusion.
 
 We can use https://bootstrap-vue.js.org/docs to avoid having a j-Query dependency for Bootstrap.  
 
