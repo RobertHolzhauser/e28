@@ -1,10 +1,13 @@
 # Integrating Vue.js with ASP.NET Core
 
-For my job I work mostly with ASP.Net Core.  Therefore, I'm very curious how I can take what I learn about VueJS in this course, and apply it in my daily work.
+### Introduction
+For my job I work mostly with ASP.Net Core.  Therefore, I'm very curious how I can take what I'm learn about VueJS in this course, and apply it in my daily work.
 
+### Main Options
 In Matt Millican's Pluralsight course on this topic, he covers two basic possibilities for integrating Vue.js with an ASP.NET Core project.  First, we can add Vue to specific pages or views of an existing ASP .NET Core application.  In this way we can incorporate Vue.js into ASP.Net Core projects and it can work along side or even be integrated into Razor and MVC views.  (Millican, 2019).
 
 The second method utilizes Vue.js as the complete front-end presentation layer housed in it's own project that calls a second project in the same solution,  which is an API running ASP.Net Core handling the backend. (Millican, 2019) We should keep in mind however, since the method of communication between the Vue front-end and the ASP.NET Core Api, is Rest, that the business logic and backend could exist in any number of backends that can run a Rest API, including PHP, Java, Python, and Ruby on Rails, and this technique could apply equally well.  
+
 
 For the first method of applying Vue.js with a front end built with Razor or MVC, Vue integrates very easily with the Html and Razor syntax, in the Html tags as normal.  We can apply Vue to a specific elements where we want to bring the Vue functionality to bear.  This could be as granular as a single element, or as broad stroke as subsection built as a Single Page Application (SPA) for something such as an admin page, blog or shopping cart.
 
