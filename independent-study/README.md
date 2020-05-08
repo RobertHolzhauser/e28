@@ -99,10 +99,10 @@ var store = {
 ### Vuex 
 Vuex is Vue's preferred state management solution for larger, or more complex solutions.  
 
-Vuex provides a central data store for the app, that allows data to be shared client side by any, or all Vue components.
+Vuex provides a central data store for the application that allows data to be shared client side by any, or all Vue components.
 
 ### Vue CLI
-The best way to start a new Vue project is by using the Vue CLI, Vue's command line interface that quickly scaffold a new project through the terminal. 
+The best way to start a new Vue project is by using the Vue CLI, Vue's command line interface that quickly scaffolds a new project through the terminal. 
 
 To get Vue CLI:
 ```
@@ -117,11 +117,11 @@ vue create my-project
 This will build out the basic structure for us, and save a lot of time.
 
 ### Bootstrap Vue
-We can use https://bootstrap-vue.js.org/docs to avoid having the j-Query dependency for Bootstrap, and still get the robust css library. 
+We can use https://bootstrap-vue.js.org/docs to avoid having the J-Query dependency for Bootstrap, and still get the robust css library. 
 
 ### Create web APIs with ASP.NET Core
 
-According to the Microsoft documentation this will bring with the following behaviors: 
+According to the Microsoft documentation this will bring with it the following behaviors: 
 
 + Attribute routing requirement
 + Automatic HTTP 400 responses
@@ -129,7 +129,7 @@ According to the Microsoft documentation this will bring with the following beha
 + Multipart/form-data request inference
 + Problem details for error status codes
 
-If we want to use several Api Controller classes we can create a base API controller class and have all of our API controllers inherit from it.   
+If we want to use several Api Controller classes, we can create a base API controller class and have all of our API controllers inherit from it.   
 
 ```
 [ApiController]
@@ -147,7 +147,7 @@ public class MediaController : APIControllerBase
 ```
 ### Ensure Controller will accept JSON
 
-We also need to ensure that an API Controller that will accept JSON.
+We also need to ensure that an API Controller will accept JSON.
 ```
 [ApiController]
 [ApiConventionType(typeof(DefaultApiConventions))]
@@ -155,10 +155,10 @@ We also need to ensure that an API Controller that will accept JSON.
 public class CommentsController : ControllerBase  
 ```
 
-For the purpose of setting up communication between our Vue.js front end, and our ASP.NET Core back we only need to look as far as the controllers.  These are what our AJAX components will interact with.  Of course we would need to build out the rest of our C# application with data models, data base connectivity, and so forth.  All of that is out of scope for this paper.  
+For the purpose of setting up communication between our Vue.js front end and our ASP.NET Core backend, we only need to look as far as the controllers.  These are what our AJAX components will interact with.  Of course we would need to build out the rest of our C# application with data model classes, data base connectivity, and so forth.  All of that is out of scope for this paper.  
 
 ### Conclusion
-So, in conclusion, overall this is a very simple pattern.  To use it we create in the same solution a Vue project with the Vue CLI, and an API project.  There are two categories of routing to manage.  One is the routes to the API, which are set up inside in ASP.Net Core the other is the routes that are used inside the SPA front-end which are handled by the Vue engine.  We can do our communication back and forth between the front-end and back-end with Axios.  The other concern that I haven't addressed is authentication, but that is out of scope for this paper. 
+So, in conclusion, overall this is a very simple pattern.  To use it we create in the same solution a Vue project with the Vue CLI, and an API project.  There are two categories of routing to manage.  One is the routes to the API, which are set up inside in ASP.Net Core, and the other is the routes which are used inside the SPA front-end and are handled by the Vue engine.  We can do our communication back and forth between the front-end and back-end with Axios.  The other concern that I haven't addressed is authentication, but that is out of scope for this paper. 
 
 ### References
 Mathias, JQuery File Size, [https://mathiasbynens.be/demo/jquery-size](https://mathiasbynens.be/demo/jquery-size)
