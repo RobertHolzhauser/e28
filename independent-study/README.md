@@ -12,14 +12,16 @@ The second method utilizes Vue.js as the complete front-end presentation layer h
 ### Integrating Vue with a Razor or MVC Front End
 For the first method of applying Vue.js with a front end built with Razor or MVC, Vue integrates very easily with the Html and Razor syntax, in the Html tags as normal.  We can apply Vue to a specific elements where we want to bring the Vue functionality to bear.  This could be as granular as a single element, or as broad stroke as a subsection built as a Single Page Application (SPA) for something such as an admin page, blog or shopping cart.  We might want to use the mustache syntax to get data binding, or perhaps it would be handing to be able to include and exclude things from the DOM with Vue's v-if syntax.  A compelling reasons we might want to do this, is the Vue.js library weighs in at 33 kb (Wikipedia, 2020) , while JQuery, minified, would cost us two and a half times that at 84 kb. (Mathias).  Of course, the other reason to opt to include Vue as part of the front end of a ASP.NET Core app is the simplicity that Vue.js allows us to have, for otherwise fairly complex code.
 
-### 
-
+### Vue.js Front End with an ASP.Net Core Api Backend
 In this paper I will mostly focus on the second option of having a Vue front-end interact with a ASP.NET Core backend.   Since building an application in Asp.Net Core is a large topic in itself, I'll only cover setting up the controllers and routing that will interact with Vue via Rest.
 
+### Advantages
 The advantages of this technique of having two different applications approach are that you get a seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the ASP.Net Core API.   You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
 
-When using Vue as the front end, that implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)
+### Routing
+When using Vue as the front end, this also implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)  Probably the best way to do routing in a Vue app is Vue Router.  
 
+### AJAX via Axios
 Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)  First, of course, we'll need to install Axios with something like NPM, Yarn, or reference the CDN.  Next, we'll want to create a LoadData method that might look something like the following example adapted from the VueJS Cookbook.
 
 ```
