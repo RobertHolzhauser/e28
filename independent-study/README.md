@@ -19,7 +19,26 @@ In this paper I will mostly focus on the second option of having a Vue front-end
 The advantages of this technique of having two different applications approach are that you get a seperation of concerns, thus you can have two seperate teams working on the same project one focused on the front end Vue application, and one focused on the ASP.Net Core API.   You also get the advantage of separate deployments since each the front end and the API are deployed independently.  This makes it possible to make a data base or business logic change without having to touch the front end.  The converse of being able to make front end changes without touching the backend at all is also true.  Another advantage is other applications can access the API as a data source.  On the flip side, the downside is the authentication becomes more complicated with this pattern. (Millican, 2019)  
 
 ### Routing
-When using Vue as the front end, this also implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)  Probably the best way to do routing in a Vue app is Vue Router.  
+When using Vue as the front end, this also implies that all routing will happen inside of Vue, rather than MVC. (Vuejs.org, 2019)  Probably the best way to do routing in a Vue app is Vue Router.  This is probably the easiest way to set up routing in the Vue SPA 
+so as to avoid page refreshes.
+
+First, we need to add Vue Router to our project.
+
+```
+npm install vue-router
+```
+
+Or, auto-magically like so, assuming we have included Vue first, this will cause Vue Router to install itself.
+```
+<script src="/path/to/vue-router.js"></script>
+```
+
+Router-link ---- renders on dom as <a > tag ..... but with router-link vue intercepts the link and 
+avoids the full page refresh that would  happen with standard a tag
+
+*  use the router-link tag for internal links
+
+use A tag for external links
 
 ### AJAX via Axios
 Axios is a good, JQuery free, way of doing AJAX in a Vue application.  (Vuejs.org, 2018)  First, of course, we'll need to install Axios with something like NPM, Yarn, or reference the CDN.  Next, we'll want to create a LoadData method that might look something like the following example adapted from the VueJS Cookbook.
@@ -39,9 +58,11 @@ new Vue({
   }
 })
 ```
+### State Management
+Internal to the Vue application is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple Vue instances, you can share it by identity with a store pattern 
 
-Internal to the Vue application is the raw data object - a Vue instance only proxies access to it. Therefore, if you have a piece of state that should be shared by multiple Vue instances, you can share it by identity:  
-VueX  for state management for medium to large SPA apps.  for smaller apps, the store pattern will probably suffice.
+### Store Pattern
+For smaller apps, the store pattern will probably suffice.
 
 ```
 var sourceOfTruth = {}
@@ -55,10 +76,10 @@ var vmB = new Vue({
 })
 ```
 
-Now whenever sourceOfTruth is mutated, both vmA and vmB will update their views automatically. Subcomponents within each of these instances would also have access via this.$root.$data. We have a single source of truth now, but debugging would be a nightmare. 
+Now, whenever the sourceOfTruth is mutated, both vmA and vmB will update their views automatically. Subcomponents within each of these instances would also have access via this.$root.$data. We have a single source of truth now, but debugging would be a nightmare. 
 Any piece of data could be changed by any part of our app at any time, without leaving a trace.
 
-To help solve this problem, we can adopt a store pattern:
+To help solve this problem, we can adopt a simple store pattern:
 ```
 var store = {
   debug: true,
@@ -77,8 +98,15 @@ var store = {
 
 ```
 
-Vue CLI - command line interface quickly scaffold a new project through the terminal
-to get Vue CLI :
+### Vuex 
+Vuex is Vue's preferred state management solution for larger, or more complex solutions.  
+
+Vuex provides a central data store for the app, that allows data to be shared client side by any, or all Vue components.
+
+### Vue CLI
+The best way to start a new Vue project is by using the Vue CLI, Vue's command line interface that quickly scaffold a new project through the terminal. 
+
+To get Vue CLI:
 ```
 with NPM
 npm install -g @vue/cli
@@ -96,15 +124,7 @@ of the most recent opened project
 Create .... choose path .....click create new project here 
 give project a name
 
-----  this is probably the easiest way to set up routing in the SPA 
-	so as to avoid page refreshes
 
-Router-link ---- renders on dom as <a > tag ..... but with router-link vue intercepts the link and 
-avoids the full page refresh that would  happen with standard a tag
-
-*  use the router-link tag for internal links
-
-use A tag for external links
 
 
 specify base MVC route for SPA page in 
